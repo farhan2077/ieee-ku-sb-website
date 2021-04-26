@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Navbar from 'components/navbar/Navbar';
+import Footer from 'components/Footer';
 import { Box } from '@chakra-ui/layout';
 
-export default function PageWrapper({ children }) {
+export default function PageContainer({ children }) {
   return (
     <div>
       <Box minH="100vh" display="flex" flexDir="column">
