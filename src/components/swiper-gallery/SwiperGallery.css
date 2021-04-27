@@ -1,0 +1,69 @@
+/* swiper library specific styles */
+.swiper-pagination {
+  bottom: 0;
+  padding-bottom: 1.5rem;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #4fd1c5 !important;
+}
+
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 6px;
+}
+
+.swiper-button-prev::after {
+  font-size: 20px;
+  color: #4fd1c5;
+}
+
+.swiper-button-next::after {
+  font-size: 20px;
+  color: #4fd1c5;
+}
+
+/* custom carousel specific styles */
+.swiper-gallery-image {
+  width: 100vw;
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.swiper-gallery-details-container {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 800px) {
+  .swiper-button-prev::after {
+    font-size: 40px;
+  }
+
+  .swiper-button-next::after {
+    font-size: 40px;
+  }
+
+  .swiper-gallery-image {
+    width: 100vw;
+    height: 750px;
+    object-fit: cover;
+  }
+
+  .swiper-gallery-details-container {
+    position: absolute;
+    left: 350px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
