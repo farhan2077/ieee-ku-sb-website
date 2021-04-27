@@ -26,6 +26,8 @@ import {
 import { NAV_ITEMS } from 'components/navbar/NAV_ITEMS';
 
 export default function Navbar() {
+  const buttonSize = useBreakpointValue({ base: 'sm', sm: 'sm', md: 'md' });
+
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -59,40 +61,48 @@ export default function Navbar() {
           flex={{ base: 1 }}
           justify={{ base: 'center', md: 'start' }}
           alignItems={'center'}
+          justifyContent={'space-between'}
         >
           <Text
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={'gray.800'}
           >
-            Logo
+            Logoooooooooooo
           </Text>
 
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+          <Flex
+            display={{ base: 'none', md: 'flex' }}
+            mr={{ base: 0, md: 0, lg: 10 }}
+          >
             <DesktopNav />
           </Flex>
-        </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}
-        >
-          <Button
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'teal.400'}
-            href={'#'}
-            rightIcon={<ArrowForwardIcon />}
-            _hover={{
-              bg: 'teal.300',
-            }}
+          <Stack
+            flex={{ base: 1, md: 0 }}
+            justify={'flex-end'}
+            direction={'row'}
+            spacing={6}
           >
-            Sign Up
-          </Button>
-        </Stack>
+            <Button
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'teal.400'}
+              href={'#'}
+              rightIcon={
+                <ArrowForwardIcon display={{ base: 'none', md: 'block' }} />
+              }
+              size={buttonSize}
+              _hover={{
+                bg: 'teal.300',
+              }}
+            >
+              Join
+              <Text display={{ base: 'none', md: 'block' }}>&nbsp;IEEE</Text>
+            </Button>
+          </Stack>
+        </Flex>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -139,6 +149,7 @@ const DesktopNav = () => {
                 p={4}
                 rounded={'xl'}
                 minW={'sm'}
+                marginTop="2"
               >
                 <Stack>
                   {navItem.children.map(child => (
