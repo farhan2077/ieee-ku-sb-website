@@ -106,7 +106,15 @@ export default function Footer() {
             <Box as="span" color={'red.500'}>
               &#10084;
             </Box>{' '}
-            by Farhan.
+            by{' '}
+            <Text
+              as="span"
+              bgGradient="linear(to-l, #7928CA,#FF0080)"
+              bgClip="text"
+            >
+              Farhan Bin Amin
+            </Text>
+            .
           </Box>
         </Box>
       </Box>
