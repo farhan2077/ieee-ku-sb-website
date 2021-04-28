@@ -6,7 +6,7 @@ import MetaDecorator from 'components/meta/MetaDecorator';
 import PageContainer from 'components/layout/PageContainer';
 import LayoutContainer from 'components/layout/LayoutContainer';
 
-import SwiperGallery from 'components/swiper-gallery/SwiperGallery';
+import SwiperGallery from 'components/home/swiper-gallery/SwiperGallery';
 
 export default function Home() {
   return (
