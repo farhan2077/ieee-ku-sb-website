@@ -1,6 +1,6 @@
-import about from './about.webp';
-import event from './event.webp';
-import join from './join.webp';
+import about from 'data/swiper-gallery/images/about.webp';
+import event from 'data/swiper-gallery/images/event.webp';
+import join from 'data/swiper-gallery/images/join.webp';
 
 export const SWIPER_GALLERY = [
   {
