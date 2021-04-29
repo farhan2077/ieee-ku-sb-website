@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import '@fontsource/heebo/400.css';
 import '@fontsource/heebo/500.css';
 import '@fontsource/heebo/700.css';
+import '@fontsource/work-sans/600.css';
 import customizedTheme from 'theme/theme';
 
 import Home from './pages/Home';

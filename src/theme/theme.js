@@ -4,6 +4,7 @@ const theme = extendTheme({
   fonts: {
     body: 'Heebo',
     heading: 'Heebo',
+    section: 'Work Sans',
   },
 });
 

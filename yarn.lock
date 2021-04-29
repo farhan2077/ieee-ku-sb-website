@@ -1830,6 +1830,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/heebo/-/heebo-4.2.2.tgz#3339e3c235a0dd623d758158aade08b4495a0751"
   integrity sha512-ieMoc6VK2VPKKJQkF5oBjju5Mo0Ju0npsrX3oXreg78LfN71VtreZ1QW1vONhMoeLIfGW95fbvPcdL0ZY/KDmQ==
 
+"@fontsource/work-sans@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/work-sans/-/work-sans-4.2.2.tgz#f125f018a6b1baa5092901de3a0ef95f58fcefe4"
+  integrity sha512-fFm8a1TbE+qDnRNsf4R6Z/yZP2f3mbj54zSoWUMIWVkgTHM0RfpcOTqoIp7Aj5jon6na0Oynlq5yXvMA5p3pKA==
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
