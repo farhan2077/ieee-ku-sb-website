@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link as RouteLink } from 'react-router-dom';
-import { Box, Link, Grid, VStack } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 import MetaDecorator from 'components/meta/MetaDecorator';
 import PageContainer from 'components/layout/PageContainer';
 import LayoutContainer from 'components/layout/LayoutContainer';
 
 import SwiperGallery from 'components/home/swiper-gallery/SwiperGallery';
+import WhatDoWeDo from 'components/home/what-do-we-do/WhatDoWeDo';
 
 export default function Home() {
   return (
@@ -15,15 +15,9 @@ export default function Home() {
       <PageContainer>
         <SwiperGallery />
         <LayoutContainer>
-          <Box textAlign="center" fontSize="xl">
-            <Grid p={3}>
-              <VStack>
-                <Link as={RouteLink} to="/about">
-                  Go to about page
-                </Link>
-              </VStack>
-            </Grid>
-          </Box>
+          <Box mt="20"></Box>
+          <WhatDoWeDo />
+          <Box mt="20"></Box>
         </LayoutContainer>
       </PageContainer>
     </div>
