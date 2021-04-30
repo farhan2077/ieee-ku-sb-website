@@ -11,7 +11,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #4fd1c5 !important;
+  background-color: #63b3ed !important;
 }
 
 .swiper-container-horizontal
@@ -22,12 +22,12 @@
 
 .swiper-button-prev::after {
   font-size: 20px;
-  color: #4fd1c5;
+  color: #63b3ed;
 }
 
 .swiper-button-next::after {
   font-size: 20px;
-  color: #4fd1c5;
+  color: #63b3ed;
 }
 
 /* custom carousel specific styles */
@@ -40,9 +40,22 @@
 
 .swiper-gallery-details-container {
   position: absolute;
-  left: 30%;
+  left: 43%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.swiper-gallery-title {
+  font-size: 1.7rem;
+  margin: 0;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.swiper-gallery-summary {
+  display: none;
+  color: white;
 }
 
 @media screen and (min-width: 800px) {
@@ -56,14 +69,32 @@
 
   .swiper-gallery-image {
     width: 100vw;
-    height: 750px;
+    height: 650px;
     object-fit: cover;
+    filter: brightness(50%);
   }
 
   .swiper-gallery-details-container {
     position: absolute;
-    left: 350px;
+    left: 550px;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .swiper-gallery-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0;
+    width: 23ch;
+    line-height: 1.1;
+    margin-bottom: 1.8rem;
+  }
+
+  .swiper-gallery-summary {
+    font-size: 1.2rem;
+    font-weight: 300;
+    width: 55ch;
+    display: block;
+    margin-bottom: 2.5rem;
   }
 }

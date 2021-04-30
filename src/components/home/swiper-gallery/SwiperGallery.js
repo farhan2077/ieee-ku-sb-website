@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouteLink } from 'react-router-dom';
-import { Button, useBreakpointValue, Text, Stack } from '@chakra-ui/react';
+import { Button, useBreakpointValue } from '@chakra-ui/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper-bundle.css';
@@ -35,32 +35,21 @@ export default function Carousel() {
                   alt={item.title}
                 />
                 <div className="swiper-gallery-details-container">
-                  <Stack spacing={{ base: '3', sm: '4', md: '12' }}>
-                    <Text
-                      fontSize={{ base: '3xl', md: '6xl' }}
-                      fontWeight={{ base: 'regular', md: 'bold' }}
-                      color="white"
-                      mb={{ base: 0, md: '-5' }}
-                    >
-                      {item.title}
-                    </Text>
-                    <Text
-                      fontSize="2xl"
-                      color="white"
-                      display={{ base: 'none', md: 'block' }}
-                    >
-                      {item.summary}
-                    </Text>
-                    <Button
-                      size={buttonSize}
-                      colorScheme={'teal'}
-                      bgColor={'teal.500'}
-                      as={RouteLink}
-                      to={item.link}
-                    >
-                      {item.linkText}
-                    </Button>
-                  </Stack>
+                  <p className="swiper-gallery-title">{item.title}</p>
+                  <p className="swiper-gallery-summary">{item.summary}</p>
+                  <Button
+                    fontWeight={400}
+                    size={buttonSize}
+                    color={'white'}
+                    bgColor={'blue.400'}
+                    _hover={{
+                      bg: 'blue.300',
+                    }}
+                    as={RouteLink}
+                    to={item.link}
+                  >
+                    {item.linkText}
+                  </Button>
                 </div>
               </div>
             </SwiperSlide>
