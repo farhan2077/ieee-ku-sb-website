@@ -7,6 +7,7 @@ import LayoutContainer from 'components/layout/LayoutContainer';
 
 import SwiperGallery from 'components/home/swiper-gallery/SwiperGallery';
 import WhatDoWeDo from 'components/home/what-do-we-do/WhatDoWeDo';
+import EventAndNews from 'components/home/event-and-news/EventAndNews';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <LayoutContainer>
           <Box mt="20"></Box>
           <WhatDoWeDo />
+          <Box mt="20"></Box>
+          <EventAndNews />
           <Box mt="20"></Box>
         </LayoutContainer>
       </PageContainer>
