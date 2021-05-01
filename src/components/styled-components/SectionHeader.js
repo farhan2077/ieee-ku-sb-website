@@ -7,7 +7,7 @@ export default function SectionHeader({ sectionHeaderText, center }) {
       fontFamily={'section'}
       fontSize="4xl"
       textAlign={center ? 'center' : ''}
-      color="blue.500"
+      color="blue.400"
       textTransform="capitalize"
       fontWeight="600"
       sx={{ letterSpacing: '-0.04em', lineHeight: '1' }}

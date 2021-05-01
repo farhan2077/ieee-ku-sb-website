@@ -11,8 +11,8 @@ export default function WhatWeDo() {
         <SectionHeader sectionHeaderText="what we do" center />
         <Text
           px={{ base: 0, sm: 0, md: 44 }}
-          pb="10"
-          pt="3"
+          pb="12"
+          pt="8"
           color="gray.600"
           align="center"
         >
