@@ -21,6 +21,7 @@ import {
   ChevronRightIcon,
   ArrowForwardIcon,
 } from '@chakra-ui/icons';
+import { Link as RouteLink } from 'react-router-dom';
 
 import { NAV_ITEMS } from 'components/navbar/NAV_ITEMS';
 
@@ -111,9 +112,13 @@ export default function Navbar() {
           justify={{ base: 'center', md: 'start' }}
           alignItems="center"
         >
-          <Text textAlign={useBreakpointValue({ base: 'center', md: 'left' })}>
-            <LogoIcon h="8" w="auto" />
-          </Text>
+          <Link as={RouteLink} to="/">
+            <Text
+              textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            >
+              <LogoIcon h="8" w="auto" />
+            </Text>
+          </Link>
 
           <Flex display={{ base: 'none', md: 'flex' }} ml={8}>
             <DesktopNav />
@@ -162,8 +167,9 @@ const DesktopNav = () => {
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
               <Link
+                as={RouteLink}
                 p={2}
-                href={navItem.href ?? '#'}
+                to={navItem.href ?? '#'}
                 fontSize={'md'}
                 fontWeight={400}
                 color={'gray.600'}
@@ -206,7 +212,8 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
-      href={href}
+      to={href}
+      as={RouteLink}
       role={'group'}
       display={'block'}
       p={2}
@@ -257,8 +264,8 @@ const MobileNavItem = ({ label, children, href }) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={Link}
-        href={href ?? '#'}
+        as={RouteLink}
+        to={href ?? '#'}
         justify={'space-between'}
         align={'center'}
         _hover={{
@@ -291,7 +298,7 @@ const MobileNavItem = ({ label, children, href }) => {
         >
           {children &&
             children.map(child => (
-              <Link key={child.label} py={2} href={child.href}>
+              <Link key={child.label} py={2} as={RouteLink} to={child.href}>
                 {child.label}
               </Link>
             ))}

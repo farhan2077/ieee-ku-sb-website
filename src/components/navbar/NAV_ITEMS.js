@@ -1,7 +1,7 @@
 export const NAV_ITEMS = [
   {
     label: 'Home',
-    href: '#',
+    href: '/',
   },
   {
     label: 'About',
@@ -20,7 +20,7 @@ export const NAV_ITEMS = [
       },
       {
         label: 'About KU student branch',
-        href: '#',
+        href: '/about',
       },
     ],
   },
