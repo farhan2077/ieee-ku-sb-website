@@ -5,7 +5,8 @@ import join from 'data/swiper-gallery/images/join.webp';
 export const SWIPER_GALLERY = [
   {
     id: 3,
-    title: 'Join now Lorem ipsum dolor sit ok ok ok',
+    title:
+      'Join now Lorem ipsum dolor sit one two three four five six seven eight nine',
     summary:
       'Join now Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae est harum provident voluptas vitae, namamet consectetur adipisicing elit. Beatae est harum provident voluptas vitae, nam',
     link: '#',
@@ -14,7 +15,7 @@ export const SWIPER_GALLERY = [
   },
   {
     id: 2,
-    title: 'Event',
+    title: 'Event now Lorem ipsum',
     summary: 'Event now',
     link: '#',
     linkText: 'See events',
@@ -22,7 +23,7 @@ export const SWIPER_GALLERY = [
   },
   {
     id: 1,
-    title: 'About',
+    title: 'About now Lorem ipsum dolor sit ok ok ok',
     summary: 'About now',
     link: '/about',
     linkText: 'See about',
