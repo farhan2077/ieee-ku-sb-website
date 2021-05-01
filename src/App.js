@@ -8,8 +8,10 @@ import '@fontsource/heebo/700.css';
 import '@fontsource/work-sans/600.css';
 import customizedTheme from 'theme/theme';
 
-import Home from './pages/Home';
-import About from './pages/About';
+import Home from 'pages/Home';
+import About from 'pages/About';
+import Events from 'pages/Events';
+import News from 'pages/News';
 
 function App() {
   return (
@@ -18,6 +20,10 @@ function App() {
         <ChakraProvider theme={customizedTheme}>
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} exact />
+          <Route path="/events" component={Events} exact />
+          <Route path="/events/:id" />
+          <Route path="/news" component={News} exact />
+          <Route path="/news/:id" />
         </ChakraProvider>
       </Switch>
     </Router>

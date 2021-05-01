@@ -1,5 +1,6 @@
 import React from 'react';
-import { Stack, Box, Text, Flex } from '@chakra-ui/react';
+import { Link as RouteLink } from 'react-router-dom';
+import { Stack, Box, Text, Flex, Spacer, Link } from '@chakra-ui/react';
 import { parseISO, format } from 'date-fns';
 
 import SectionHeader from 'components/styled-components/SectionHeader';
@@ -10,7 +11,21 @@ const maxCount = 3;
 export default function News() {
   return (
     <Stack>
-      <SectionHeader sectionHeaderText="news" />
+      <Flex align="center">
+        <SectionHeader sectionHeaderText="news" />
+        <Spacer />
+        <Link
+          as={RouteLink}
+          to="/news"
+          color="gray.600"
+          _hover={{
+            color: 'gray.800',
+          }}
+          mr={{ base: 0, sm: 0, md: 0, lg: '1' }}
+        >
+          See all
+        </Link>
+      </Flex>
       <Box m="6"></Box>
       <Box
         maxH={{ base: 'auto', sm: 'auto', md: '450px' }}
@@ -34,7 +49,7 @@ export default function News() {
                     direction="column"
                     alignItems="center"
                     justifyContent="center"
-                    bg="cyan.100"
+                    bg="blue.100"
                     rounded="xl"
                     h={{ base: 14, md: '16' }}
                     w={{ base: 14, md: '16' }}

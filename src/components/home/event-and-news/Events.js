@@ -1,5 +1,6 @@
 import React from 'react';
-import { Stack, Box, Text, Badge, Flex } from '@chakra-ui/react';
+import { Link as RouteLink } from 'react-router-dom';
+import { Stack, Box, Text, Badge, Flex, Spacer, Link } from '@chakra-ui/react';
 import { TimeIcon } from '@chakra-ui/icons';
 import { parseISO, format } from 'date-fns';
 import { Icon } from '@chakra-ui/react';
@@ -13,7 +14,21 @@ const maxCount = 3;
 export default function Event() {
   return (
     <Stack>
-      <SectionHeader sectionHeaderText="events" />
+      <Flex align="center">
+        <SectionHeader sectionHeaderText="events" />
+        <Spacer />
+        <Link
+          as={RouteLink}
+          to="/events"
+          color="gray.600"
+          _hover={{
+            color: 'gray.800',
+          }}
+          mr={{ base: 0, sm: 0, md: 0, lg: '1' }}
+        >
+          See all
+        </Link>
+      </Flex>
       <Box m="6"></Box>
       <Box
         maxH={{ base: 'auto', sm: 'auto', md: '450px' }}
