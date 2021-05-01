@@ -8,7 +8,7 @@ export default function WhatWeDo() {
   return (
     <Box>
       <Stack>
-        <SectionHeader sectionHeaderText="what do we do?" center />
+        <SectionHeader sectionHeaderText="what we do" center />
         <Text
           px={{ base: 0, sm: 0, md: 44 }}
           pb="10"
