@@ -7,10 +7,12 @@ import {
   Stack,
   Text,
   Flex,
-  Tag,
+  chakra,
+  VisuallyHidden,
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { FaFacebookF } from 'react-icons/fa';
 
 const LogoIcon = props => (
   <Icon viewBox="0 0 463 112" {...props}>
@@ -72,6 +74,30 @@ const ListHeader = ({ children }) => {
   );
 };
 
+const SocialButton = ({ children, label, href }) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
+      href={href}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      _hover={{
+        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+      }}
+    >
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  );
+};
+
 export default function Footer() {
   return (
     <Box mt="auto">
@@ -86,30 +112,28 @@ export default function Footer() {
               <Link href={'#'}>Events</Link>
               <Stack direction={'row'} align={'center'} spacing={2}>
                 <Link href={'#'}>News</Link>
-                <Tag
-                  size={'sm'}
-                  bg={useColorModeValue('green.300', 'green.800')}
-                  ml={2}
-                  color={'white'}
-                >
-                  New
-                </Tag>
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>About Us</ListHeader>
-              <Link href={'#'}>Press</Link>
-              <Link href={'#'}>Careers</Link>
+              <Link href={'#'}>About IEEE</Link>
+              <Link href={'#'}>KU IEEE Student Branch</Link>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader>Legal</ListHeader>
-              <Link href={'#'}>Privacy Policy</Link>
-              <Link href={'#'}>Terms of Service</Link>
+              <ListHeader>Members</ListHeader>
+              <Link href={'#'}>All members</Link>
+              <Link href={'#'}>Member benefits</Link>
             </Stack>
-            <Stack align={'flex-start'}>
+            <Stack align={'flex-start'} spacing="1.5">
               <ListHeader>Follow Us</ListHeader>
-              <Link href={'#'}>Facebook</Link>
-              <Link href={'#'}>LinkedIn</Link>
+              <Link href={'#'}>
+                <SocialButton
+                  label={'Facebook'}
+                  href={'https://www.facebook.com/ieeekustudentbranch'}
+                >
+                  <FaFacebookF />
+                </SocialButton>
+              </Link>
             </Stack>
           </SimpleGrid>
         </Container>
@@ -141,7 +165,10 @@ export default function Footer() {
             by{' '}
             <Text
               as="span"
-              bgGradient="linear(to-l, #7928CA,#FF0080)"
+              bgColor="gray.800"
+              _hover={{
+                bgGradient: 'linear(to-l, #7928CA,#FF0080)',
+              }}
               bgClip="text"
             >
               Farhan Bin Amin

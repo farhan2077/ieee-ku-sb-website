@@ -66,7 +66,7 @@ export default function Event() {
                       >
                         {item.name}
                       </Text>
-                      <Badge colorScheme="green">
+                      <Badge colorScheme="blue">
                         {item.status && item.status}
                       </Badge>
                     </Box>
