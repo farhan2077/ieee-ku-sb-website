@@ -4,7 +4,7 @@ import skill_development from 'data/what-do-we-do/images/skill_development.png';
 
 export const WHAT_DO_WE_DO = [
   {
-    id: 1,
+    id: 3,
     title: 'skill development',
     summary:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis perferendis rem explicabo voluptas assumenda necessitatibus totam omnis earum.',

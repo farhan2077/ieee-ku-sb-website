@@ -36,7 +36,7 @@ export default function Event() {
         rounded="xl"
       >
         <Stack padding={{ base: '2', sm: '5', md: 5 }} bgColor="gray.50">
-          {EVENTS.slice(0, maxCount).map(item => {
+          {EVENTS.slice(0, maxCount).map(event => {
             return (
               <Stack
                 direction={{ base: 'column', sm: 'column', md: 'row' }}
@@ -47,50 +47,58 @@ export default function Event() {
                   bg: 'white',
                 }}
               >
-                <Box w={{ base: 'full', sm: 'full', md: '30%' }}>
-                  <Text color={'gray.600'} fontWeight="500">
-                    {format(parseISO(item.startDate), 'MMM dd, yyyy')}
-                  </Text>
-                </Box>
-                <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
-                  <Stack>
-                    <Box>
-                      <Text
-                        color={'gray.800'}
-                        fontSize="lg"
-                        fontWeight="500"
-                        mb="-2"
-                        display="inline-block"
-                        mr="2"
-                        lineHeight="1.3"
-                      >
-                        {item.name}
-                      </Text>
-                      <Badge colorScheme="blue">
-                        {item.status && item.status}
-                      </Badge>
-                    </Box>
-                    <Stack direction="row">
-                      {item.location && (
-                        <Flex align="center" mr="6">
-                          <Icon as={BiMap} color={'gray.600'} h="5" w="5" />
-                          <Text color={'gray.600'} ml="0.5">
-                            {item.location}
-                          </Text>
-                        </Flex>
-                      )}
-                      {item.startTime && (
-                        <Flex align="center">
-                          <TimeIcon color={'gray.600'} h="4" w="4" />
-                          <Text color={'gray.600'} ml="1.5">
-                            {item.startTime}
-                          </Text>
-                        </Flex>
-                      )}
+                <Link
+                  _hover={{
+                    textDecoration: 'none',
+                  }}
+                  as={RouteLink}
+                  to={`/events/${event.id}`}
+                >
+                  <Box w={{ base: 'full', sm: 'full', md: '30%' }}>
+                    <Text color={'gray.600'} fontWeight="500">
+                      {format(parseISO(event.startDate), 'MMM dd, yyyy')}
+                    </Text>
+                  </Box>
+                  <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
+                    <Stack>
+                      <Box>
+                        <Text
+                          color={'gray.800'}
+                          fontSize="lg"
+                          fontWeight="500"
+                          mb="-2"
+                          display="inline-block"
+                          mr="2"
+                          lineHeight="1.3"
+                        >
+                          {event.name}
+                        </Text>
+                        <Badge colorScheme="blue">
+                          {event.status && event.status}
+                        </Badge>
+                      </Box>
+                      <Stack direction="row">
+                        {event.location && (
+                          <Flex align="center" mr="6">
+                            <Icon as={BiMap} color={'gray.600'} h="5" w="5" />
+                            <Text color={'gray.600'} ml="0.5">
+                              {event.location}
+                            </Text>
+                          </Flex>
+                        )}
+                        {event.startTime && (
+                          <Flex align="center">
+                            <TimeIcon color={'gray.600'} h="4" w="4" />
+                            <Text color={'gray.600'} ml="1.5">
+                              {event.startTime}
+                            </Text>
+                          </Flex>
+                        )}
+                      </Stack>
+                      <Text color={'gray.500'}>{event.summary}</Text>
                     </Stack>
-                    <Text color={'gray.500'}>{item.summary}</Text>
-                  </Stack>
-                </Box>
+                  </Box>
+                </Link>
               </Stack>
             );
           })}
