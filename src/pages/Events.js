@@ -7,7 +7,7 @@ import LayoutContainer from 'components/layout/LayoutContainer';
 export default function Events() {
   return (
     <div>
-      <MetaDecorator title="Events" description="event page" />
+      <MetaDecorator title="Events | IEEE KU SB" />
       <PageContainer>
         <LayoutContainer>events</LayoutContainer>
       </PageContainer>

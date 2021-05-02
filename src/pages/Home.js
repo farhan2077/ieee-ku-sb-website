@@ -14,7 +14,7 @@ import Affiliations from 'components/home/Affiliations';
 export default function Home() {
   return (
     <div>
-      <MetaDecorator title="Home" description="home page" />
+      <MetaDecorator title="IEEE KU SB" />
       <PageContainer>
         <SwiperGallery />
         <LayoutContainer>

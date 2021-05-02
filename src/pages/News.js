@@ -7,7 +7,7 @@ import LayoutContainer from 'components/layout/LayoutContainer';
 export default function News() {
   return (
     <div>
-      <MetaDecorator title="News" description="news page" />
+      <MetaDecorator title="News | IEEE KU SB" />
       <PageContainer>
         <LayoutContainer>news</LayoutContainer>
       </PageContainer>
