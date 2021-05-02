@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link as RouteLink } from 'react-router-dom';
 import { Stack, Box, Text, Flex, Spacer, Link } from '@chakra-ui/react';
-import { parseISO, format } from 'date-fns';
 
 import SectionHeader from 'components/styled-components/SectionHeader';
 import { NEWS } from 'data/news/NEWS';
@@ -60,10 +59,11 @@ export default function News() {
                       fontSize="xl"
                       mb="-1"
                     >
-                      {format(parseISO(item.date), 'dd')}
+                      {console.log(item.date)}
+                      {item.date.substring(0, 2)}
                     </Text>
                     <Text color={'gray.600'} fontWeight="500">
-                      {format(parseISO(item.date), 'MMM')}
+                      {item.date.substring(3, 6)}
                     </Text>
                   </Flex>
                   <Text

@@ -2,7 +2,7 @@ export const EVENTS = [
   {
     id: 6,
     status: 'upcoming',
-    startDate: '2021-04-29',
+    startDate: '29 Apr, 2021',
     startTime: '9:00 AM',
     endTime: '10: PM',
     location: 'Online',
@@ -14,7 +14,7 @@ export const EVENTS = [
   {
     id: 5,
     status: 'ongoing',
-    startDate: '2019-12-26',
+    startDate: '29 Apr, 2021',
     startTime: '9:00 AM',
     location: 'KU',
     name: 'Virtual content-based parallelism',
@@ -23,7 +23,7 @@ export const EVENTS = [
   },
   {
     id: 4,
-    startDate: '2019-12-26',
+    startDate: '29 Apr, 2021',
     location: 'Dhaka',
     name: 'Devolved systemic conglomeration',
     summary:
@@ -31,7 +31,7 @@ export const EVENTS = [
   },
   {
     id: 3,
-    startDate: '2019-12-26',
+    startDate: '29 Apr, 2021',
     startTime: '9:00 AM',
     location: 'KU',
     name: 'Advanced regional collaboration',
@@ -40,7 +40,7 @@ export const EVENTS = [
   },
   {
     id: 2,
-    startDate: '2019-12-26',
+    startDate: '29 Apr, 2021',
     startTime: '9:00 AM',
     location: 'KU',
     name: 'Virtual content-based parallelism',
@@ -49,7 +49,7 @@ export const EVENTS = [
   },
   {
     id: 1,
-    startDate: '2019-12-26',
+    startDate: '29 Apr, 2021',
     startTime: '9:00 AM',
     location: 'KU',
     name: 'Devolved systemic conglomeration',

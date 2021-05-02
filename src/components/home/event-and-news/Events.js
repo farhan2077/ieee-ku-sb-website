@@ -2,7 +2,6 @@ import React from 'react';
 import { Link as RouteLink } from 'react-router-dom';
 import { Stack, Box, Text, Badge, Flex, Spacer, Link } from '@chakra-ui/react';
 import { TimeIcon } from '@chakra-ui/icons';
-import { parseISO, format } from 'date-fns';
 import { Icon } from '@chakra-ui/react';
 import { BiMap } from 'react-icons/bi';
 
@@ -56,7 +55,7 @@ export default function Event() {
                 >
                   <Box w={{ base: 'full', sm: 'full', md: '30%' }}>
                     <Text color={'gray.600'} fontWeight="500">
-                      {format(parseISO(event.startDate), 'MMM dd, yyyy')}
+                      {event.startDate}
                     </Text>
                   </Box>
                   <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
