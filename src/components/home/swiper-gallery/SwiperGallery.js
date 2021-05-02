@@ -11,7 +11,7 @@ import { SWIPER_GALLERY } from 'data/swiper-gallery/SWIPER_GALLERY';
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function Carousel() {
-  const buttonSize = useBreakpointValue({ base: 'xs', sm: 'sm', md: 'md' });
+  const buttonSize = useBreakpointValue({ base: 'sm', sm: 'sm', md: 'md' });
 
   if (!SWIPER_GALLERY || !SWIPER_GALLERY) {
     return <div>No images in gallery yet</div>;

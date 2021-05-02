@@ -79,6 +79,7 @@ const LogoIcon = props => (
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
+  const buttonSize = useBreakpointValue({ base: 'md', sm: 'md', md: 'md' });
 
   return (
     <Box>
@@ -142,11 +143,16 @@ export default function Navbar() {
               _hover={{
                 bg: 'blue.300',
               }}
+              size={buttonSize}
               rightIcon={
-                <ArrowForwardIcon display={{ base: 'none', md: 'block' }} />
+                <ArrowForwardIcon
+                  mb="0.5"
+                  display={{ base: 'none', md: 'block' }}
+                />
               }
             >
-              <Text mb="-0.5">Join IEEE</Text>
+              Join
+              <Text display={{ base: 'none', md: 'block' }}>&nbsp;IEEE</Text>
             </Button>
           </Flex>
         </Stack>

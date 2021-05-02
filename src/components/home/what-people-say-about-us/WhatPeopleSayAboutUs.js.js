@@ -16,21 +16,28 @@ const QuoteIcon = props => (
 export default function WhatPeopleSayAboutUs() {
   return (
     <Box>
-      <Stack>
+      <Stack spacing={{ base: 3, sm: 3, md: 4 }}>
         <SectionHeader sectionHeaderText="what people say about us" center />
-        <SimpleGrid columns={{ base: '1', sm: '1', md: '2' }} spacing={10}>
+        <SimpleGrid
+          columns={{ base: '1', sm: '1', md: '2' }}
+          spacing={{ base: 2, sm: 4, md: 10 }}
+        >
           {WHAT_PEOPLE_SAY_ABOUT_US.map(item => {
             return (
               <Stack
                 key={item.id}
                 mt="8"
-                px={10}
-                spacing={{ base: 8, md: 10 }}
+                px={{ base: 2, md: 10 }}
+                spacing={{ base: 4, md: 6 }}
                 align={'center'}
                 direction={'column'}
               >
-                <QuoteIcon color="gray.400" h="8" w="auto" mb="-5" />
-
+                <QuoteIcon
+                  color="gray.400"
+                  h="8"
+                  w="auto"
+                  mb={{ base: 0, sm: 0, md: -1.5 }}
+                />
                 <Text color="gray.600" textAlign={'center'} maxW={'3xl'}>
                   {item.speech}
                 </Text>
