@@ -10,7 +10,8 @@ import customizedTheme from 'theme/theme';
 
 import Home from 'pages/Home';
 import About from 'pages/About';
-import Events from 'pages/Events';
+import Events from 'pages/event/Events';
+import Event from 'pages/event/Event';
 import News from 'pages/News';
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} exact />
           <Route path="/events" component={Events} exact />
-          <Route path="/events/:id" />
+          <Route path="/events/:id" component={Event} exact />
           <Route path="/news" component={News} exact />
           <Route path="/news/:id" />
         </ChakraProvider>
