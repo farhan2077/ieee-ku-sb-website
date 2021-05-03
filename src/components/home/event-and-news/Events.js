@@ -46,19 +46,19 @@ export default function Event() {
                   bg: 'white',
                 }}
               >
-                <Link
-                  _hover={{
-                    textDecoration: 'none',
-                  }}
-                  as={RouteLink}
-                  to={`/events/${event.id}`}
-                >
-                  <Box w={{ base: 'full', sm: 'full', md: '30%' }} mb={1}>
-                    <Text color={'gray.600'} fontWeight="500">
-                      {event.startDate}
-                    </Text>
-                  </Box>
-                  <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
+                <Box w={{ base: 'full', sm: 'full', md: '30%' }} mb={1}>
+                  <Text color={'gray.600'} fontWeight="500">
+                    {event.startDate}
+                  </Text>
+                </Box>
+                <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
+                  <Link
+                    _hover={{
+                      textDecoration: 'none',
+                    }}
+                    as={RouteLink}
+                    to={`/events/${event.id}`}
+                  >
                     <Stack>
                       <Box>
                         <Text
@@ -96,8 +96,8 @@ export default function Event() {
                       </Stack>
                       <Text color={'gray.500'}>{event.summary}</Text>
                     </Stack>
-                  </Box>
-                </Link>
+                  </Link>
+                </Box>
               </Stack>
             );
           })}
