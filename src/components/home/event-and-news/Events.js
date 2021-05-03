@@ -53,7 +53,7 @@ export default function Event() {
                   as={RouteLink}
                   to={`/events/${event.id}`}
                 >
-                  <Box w={{ base: 'full', sm: 'full', md: '30%' }}>
+                  <Box w={{ base: 'full', sm: 'full', md: '30%' }} mb={1}>
                     <Text color={'gray.600'} fontWeight="500">
                       {event.startDate}
                     </Text>
