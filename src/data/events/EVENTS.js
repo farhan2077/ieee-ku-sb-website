@@ -172,7 +172,7 @@ export const EVENTS = [
     location: 'KU',
     name: 'Devolved systemic conglomeration',
     summary:
-      'Open-source intermediate intranet profit-focused needs-based frame profit-focused needs-based frame',
+      'Open-source intermediate intranet profit-focused needs-based frame',
     details: [
       {
         paragraph:
