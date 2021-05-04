@@ -12,6 +12,7 @@ import {
   Icon,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { Link as RouteLink } from 'react-router-dom';
 import { FaFacebookF } from 'react-icons/fa';
 
 const LogoIcon = props => (
@@ -74,7 +75,7 @@ const ListHeader = ({ children }) => {
   );
 };
 
-const SocialButton = ({ children, label, href }) => {
+const SocialButton = ({ children, label }) => {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -83,7 +84,6 @@ const SocialButton = ({ children, label, href }) => {
       h={8}
       cursor={'pointer'}
       as={'a'}
-      href={href}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
@@ -109,28 +109,35 @@ export default function Footer() {
           <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
             <Stack align={'flex-start'}>
               <ListHeader>Activities</ListHeader>
-              <Link href={'#'}>Events</Link>
-              <Stack direction={'row'} align={'center'} spacing={2}>
-                <Link href={'#'}>News</Link>
-              </Stack>
+              <Link as={RouteLink} to="/events">
+                <Text color="gray.600">Events</Text>
+              </Link>
+              <Link as={RouteLink} to="/news">
+                <Text color="gray.600">News</Text>
+              </Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>About Us</ListHeader>
-              <Link href={'#'}>About IEEE</Link>
-              <Link href={'#'}>KU IEEE Student Branch</Link>
+              <Link as={RouteLink} to="/about-ieee">
+                <Text color="gray.600">About IEEE</Text>
+              </Link>
+              <Link as={RouteLink} to="/about-ku-student-branch">
+                <Text color="gray.600">KU IEEE Student Branch</Text>
+              </Link>
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader>Members</ListHeader>
-              <Link href={'#'}>All members</Link>
-              <Link href={'#'}>Member benefits</Link>
+              <Link as={RouteLink} to="/members">
+                <Text color="gray.600">All members</Text>
+              </Link>
+              <Link as={RouteLink} to="/member-benefits">
+                <Text color="gray.600">Member benefits</Text>
+              </Link>
             </Stack>
             <Stack align={'flex-start'} spacing="1.5">
               <ListHeader>Follow Us</ListHeader>
-              <Link href={'#'}>
-                <SocialButton
-                  label={'Facebook'}
-                  href={'https://www.facebook.com/ieeekustudentbranch'}
-                >
+              <Link href={'https://www.facebook.com/ieeekustudentbranch'}>
+                <SocialButton label={'Facebook'}>
                   <FaFacebookF />
                 </SocialButton>
               </Link>

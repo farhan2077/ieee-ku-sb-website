@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/layout';
 import { Avatar, VisuallyHidden, chakra, Link } from '@chakra-ui/react';
 import { FaFacebookF } from 'react-icons/fa';
@@ -38,6 +38,10 @@ const SocialButton = ({ children, label, href }) => {
 };
 
 export default function Members() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <MetaDecorator title="Members | IEEE KU SB" />
