@@ -13,6 +13,7 @@ import About from 'pages/About';
 import Events from 'pages/event/Events';
 import Event from 'pages/event/Event';
 import News from 'pages/News';
+import Members from 'pages/Members';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Route path="/events" component={Events} exact />
           <Route path="/events/:id" component={Event} exact />
           <Route path="/news" component={News} exact />
-          <Route path="/news/:id" />
+          <Route path="/members" component={Members} exact />
         </ChakraProvider>
       </Switch>
     </Router>
