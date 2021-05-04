@@ -165,22 +165,18 @@ export default function Footer() {
             <LogoIcon h="8" w="auto" />
           </Flex>
           <Box pt={6} fontSize={'sm'} textAlign={'center'}>
-            © 2021 IEEE KU Student Branch. All rights reserved. Made with&nbsp;
-            <Box as="span" color={'red.500'}>
-              &#10084;
-            </Box>{' '}
-            by{' '}
-            <Text
-              as="span"
-              bgColor="gray.800"
-              _hover={{
-                bgGradient: 'linear(to-l, #7928CA,#FF0080)',
-              }}
-              bgClip="text"
-            >
-              Farhan Bin Amin
+            <Text color="gray.600">
+              © 2021 IEEE KU Student Branch. All rights reserved.
+              <br />
+              Made with&nbsp;
+              <Box as="span" color={'red.500'}>
+                &#10084;
+              </Box>{' '}
+              by{' '}
+              <Link as={RouteLink} to="/members">
+                Farhan Bin Amin
+              </Link>
             </Text>
-            .
           </Box>
         </Box>
       </Box>
