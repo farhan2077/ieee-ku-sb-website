@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SimpleGrid, Box, Stack, Flex, Text, Center } from '@chakra-ui/layout';
 
 import MetaDecorator from 'components/meta/MetaDecorator';
@@ -8,6 +8,10 @@ import SectionHeader from 'components/styled-components/SectionHeader';
 import { NEWS } from 'data/news/NEWS';
 
 export default function News() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <MetaDecorator title="News | IEEE KU SB" />

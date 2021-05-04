@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link as RouteLink } from 'react-router-dom';
 import { Stack, Box, Text, Badge, Flex, Link, Center } from '@chakra-ui/layout';
 import { TimeIcon, ArrowForwardIcon } from '@chakra-ui/icons';
@@ -12,6 +12,10 @@ import SectionHeader from 'components/styled-components/SectionHeader';
 import { EVENTS } from 'data/events/EVENTS';
 
 export default function Events() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <MetaDecorator title="Events | IEEE KU SB" />

@@ -21,6 +21,10 @@ export default function Event() {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const event = EVENTS.find(event => event.id === parseInt(id));
     setEvent(event);
   }, [id]);
