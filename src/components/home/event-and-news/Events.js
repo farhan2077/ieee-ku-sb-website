@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouteLink } from 'react-router-dom';
 import { Stack, Box, Text, Badge, Flex, Spacer, Link } from '@chakra-ui/react';
-import { TimeIcon } from '@chakra-ui/icons';
+import { TimeIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Icon } from '@chakra-ui/react';
 import { BiMap } from 'react-icons/bi';
 
@@ -52,15 +52,9 @@ export default function Event() {
                   </Text>
                 </Box>
                 <Box w={{ base: 'full', sm: 'full', md: '70%' }}>
-                  <Link
-                    _hover={{
-                      textDecoration: 'none',
-                    }}
-                    as={RouteLink}
-                    to={`/events/${event.id}`}
-                  >
-                    <Stack>
-                      <Box>
+                  <Stack>
+                    <Box>
+                      <Link as={RouteLink} to={`/events/${event.id}`}>
                         <Text
                           color={'gray.800'}
                           fontSize="lg"
@@ -69,34 +63,48 @@ export default function Event() {
                           display="inline-block"
                           mr="2"
                           lineHeight="1.3"
+                          _hover={{
+                            textDecoration: 'underline',
+                          }}
                         >
                           {event.name}
                         </Text>
-                        <Badge colorScheme="blue">
-                          {event.status && event.status}
-                        </Badge>
-                      </Box>
-                      <Stack direction="row">
-                        {event.location && (
-                          <Flex align="center" mr="6">
-                            <Icon as={BiMap} color={'gray.600'} h="5" w="5" />
-                            <Text color={'gray.600'} ml="0.5">
-                              {event.location}
-                            </Text>
-                          </Flex>
-                        )}
-                        {event.startTime && (
-                          <Flex align="center">
-                            <TimeIcon color={'gray.600'} h="4" w="4" />
-                            <Text color={'gray.600'} ml="1.5">
-                              {event.startTime}
-                            </Text>
-                          </Flex>
-                        )}
-                      </Stack>
-                      <Text color={'gray.500'}>{event.summary}</Text>
-                    </Stack>
-                  </Link>
+                      </Link>
+
+                      <Badge colorScheme="blue">
+                        {event.status && event.status}
+                      </Badge>
+                    </Box>
+                    <Flex direction="row">
+                      {event.location && (
+                        <Flex align="center" mr="10">
+                          <Icon as={BiMap} color={'gray.600'} h="5" w="5" />
+                          <Text color={'gray.600'} ml="0.5">
+                            {event.location}
+                          </Text>
+                        </Flex>
+                      )}
+                      {event.startTime && (
+                        <Flex align="center">
+                          <TimeIcon color={'gray.600'} h="4" w="4" />
+                          <Text color={'gray.600'} ml="1.5">
+                            {event.startTime}
+                          </Text>
+                        </Flex>
+                      )}
+                    </Flex>
+                    <Text color={'gray.500'}>{event.summary}</Text>
+                    <Link
+                      as={RouteLink}
+                      to={`/events/${event.id}`}
+                      color={'blue.400'}
+                    >
+                      <Flex align={'center'}>
+                        <Text>Read more</Text>
+                        <ArrowForwardIcon ml={2} w={4} h={4} />
+                      </Flex>
+                    </Link>
+                  </Stack>
                 </Box>
               </Stack>
             );

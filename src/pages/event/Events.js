@@ -49,6 +49,9 @@ export default function Events() {
                           display="inline-block"
                           mr="2"
                           lineHeight="1.3"
+                          _hover={{
+                            textDecoration: 'underline',
+                          }}
                         >
                           {event.name}
                         </Text>
@@ -78,9 +81,6 @@ export default function Events() {
                     </Stack>
                     <Text color={'gray.500'}>{event.summary}</Text>
                     <Link
-                      _hover={{
-                        textDecoration: 'none',
-                      }}
                       as={RouteLink}
                       to={`/events/${event.id}`}
                       color={'blue.400'}
