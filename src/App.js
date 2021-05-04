@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import { Global, css } from '@emotion/react';
 
 import '@fontsource/heebo/400.css';
 import '@fontsource/heebo/500.css';
@@ -15,11 +16,23 @@ import News from 'pages/News';
 import Members from 'pages/Members';
 import PageNotImplemented from 'pages/PageNotImplemented';
 
+const GlobalStyles = css`
+  /*
+    This will hide the focus indicator if the element receives focus    via the mouse,
+    but it will still show up on keyboard focus.
+  */
+  .js-focus-visible :focus:not([data-focus-visible-added]) {
+    outline: none;
+    box-shadow: none;
+  }
+`;
+
 function App() {
   return (
     <Router>
       <Switch>
         <ChakraProvider theme={customizedTheme}>
+          <Global styles={GlobalStyles} />
           <Route path="/" component={Home} exact />
 
           <Route path="/about-ieee" component={PageNotImplemented} exact />
