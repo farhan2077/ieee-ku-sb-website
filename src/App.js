@@ -15,6 +15,7 @@ import Event from 'pages/event/Event';
 import News from 'pages/News';
 import Members from 'pages/Members';
 import PageNotImplemented from 'pages/PageNotImplemented';
+import NotFound from 'pages/NotFound';
 
 const GlobalStyles = css`
   /*
@@ -50,6 +51,8 @@ function App() {
           <Route path="/member-benefits" component={PageNotImplemented} exact />
 
           <Route path="/contact" component={PageNotImplemented} exact />
+
+          <Route component={NotFound} />
         </ChakraProvider>
       </Switch>
     </Router>

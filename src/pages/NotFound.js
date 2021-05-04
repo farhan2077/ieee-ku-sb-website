@@ -1,10 +1,10 @@
 import { Link as RouteLink } from 'react-router-dom';
-import { Text, Flex, Link } from '@chakra-ui/react';
+import { Flex, Link, Text } from '@chakra-ui/react';
 
 import PageContainer from 'components/layout/PageContainer';
 import LayoutContainer from 'components/layout/LayoutContainer';
 
-export default function PageNotImplemented() {
+export default function NotFound() {
   return (
     <div>
       <PageContainer>
@@ -15,7 +15,10 @@ export default function PageNotImplemented() {
             alignItems="center"
             justifyContent="center"
           >
-            <Text>This page is under development ... 😴 😴 😴</Text>
+            <Text fontSize="6xl" color="red.500" fontWeight="bold">
+              Error 404!
+            </Text>
+            <Text mt="3">Page not found 🙁</Text>
             <Link textDecoration="underline" as={RouteLink} to="/" mt="2">
               Go to home
             </Link>
