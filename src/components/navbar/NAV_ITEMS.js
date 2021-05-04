@@ -8,19 +8,19 @@ export const NAV_ITEMS = [
     children: [
       {
         label: 'About IEEE',
-        href: '#',
+        href: '/about-ieee',
       },
-      {
-        label: 'About region 10',
-        href: '#',
-      },
-      {
-        label: 'About Bangladesh section',
-        href: '#',
-      },
+      // {
+      //   label: 'About region 10',
+      //   href: '#',
+      // },
+      // {
+      //   label: 'About Bangladesh section',
+      //   href: '#',
+      // },
       {
         label: 'About KU student branch',
-        href: '/about',
+        href: '/about-ku-student-branch',
       },
     ],
   },
@@ -29,11 +29,11 @@ export const NAV_ITEMS = [
     children: [
       {
         label: 'Events',
-        href: '#',
+        href: '/events',
       },
       {
         label: 'News',
-        href: '#',
+        href: '/news',
       },
     ],
   },
@@ -42,16 +42,16 @@ export const NAV_ITEMS = [
     children: [
       {
         label: 'All members',
-        href: '#',
+        href: '/members',
       },
       {
         label: 'Member benefits',
-        href: '#',
+        href: '/member-benefits',
       },
     ],
   },
   {
     label: 'Contact',
-    href: '#',
+    href: '/contact',
   },
 ];
