@@ -140,7 +140,7 @@ export default function Event() {
                                 <Image
                                   objectFit="cover"
                                   src={image.image}
-                                  alt="Event"
+                                  alt={event.name}
                                 />
                               </SwiperSlide>
                             ))}
