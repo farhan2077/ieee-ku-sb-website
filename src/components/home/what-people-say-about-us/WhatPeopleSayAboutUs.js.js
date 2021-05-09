@@ -42,12 +42,7 @@ export default function WhatPeopleSayAboutUs() {
                   {item.speech}
                 </Text>
                 <Box textAlign={'center'}>
-                  <Avatar
-                    src={item.image}
-                    alt={'Jenny Wilson'}
-                    size="lg"
-                    mb={4}
-                  />
+                  <Avatar src={item.image} alt={item.name} size="lg" mb={4} />
                   <Text color={'gray.800'} fontSize="lg" fontWeight="500">
                     {item.name}
                   </Text>
