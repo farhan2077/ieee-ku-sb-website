@@ -76,6 +76,7 @@ export default function Members() {
                       align="center"
                       textTransform="capitalize"
                       fontSize="lg"
+                      fontWeight="500"
                       mt="5"
                       color="gray.800"
                     >
@@ -84,7 +85,7 @@ export default function Members() {
                     <Text
                       align="center"
                       textTransform="capitalize"
-                      color="gray.500"
+                      color="gray.600"
                     >
                       {member.position}
                     </Text>

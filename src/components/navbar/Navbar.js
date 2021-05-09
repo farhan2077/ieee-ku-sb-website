@@ -117,7 +117,9 @@ export default function Navbar() {
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             >
-              <LogoIcon h="8" w="auto" />
+              <span aria-label="logo">
+                <LogoIcon h="8" w="auto" />
+              </span>
             </Text>
           </Link>
 
@@ -138,10 +140,10 @@ export default function Navbar() {
               fontWeight={400}
               lineHeight="0"
               color={'white'}
-              bg={'blue.400'}
+              bg={'blue.500'}
               href={'#'}
               _hover={{
-                bg: 'blue.300',
+                bg: 'blue.400',
               }}
               size={buttonSize}
               rightIcon={

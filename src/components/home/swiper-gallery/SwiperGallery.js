@@ -41,9 +41,9 @@ export default function Carousel() {
                     fontWeight={400}
                     size={buttonSize}
                     color={'white'}
-                    bgColor={'blue.400'}
+                    bgColor={'blue.500'}
                     _hover={{
-                      bg: 'blue.300',
+                      bg: 'blue.400',
                     }}
                     as={RouteLink}
                     to={item.link}

@@ -93,11 +93,11 @@ export default function Event() {
                         </Flex>
                       )}
                     </Flex>
-                    <Text color={'gray.500'}>{event.summary}</Text>
+                    <Text color={'gray.600'}>{event.summary}</Text>
                     <Link
                       as={RouteLink}
                       to={`/events/${event.id}`}
-                      color={'blue.400'}
+                      color={'blue.600'}
                     >
                       <Flex align={'center'}>
                         <Text>Read more</Text>

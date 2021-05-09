@@ -83,7 +83,6 @@ const SocialButton = ({ children, label }) => {
       w={8}
       h={8}
       cursor={'pointer'}
-      as={'a'}
       display={'inline-flex'}
       alignItems={'center'}
       justifyContent={'center'}
@@ -136,7 +135,7 @@ export default function Footer() {
             </Stack>
             <Stack align={'flex-start'} spacing="1.5">
               <ListHeader>Follow Us</ListHeader>
-              <Link href={'https://www.facebook.com/ieeekustudentbranch'}>
+              <Link href="https://www.facebook.com/ieeekustudentbranch">
                 <SocialButton label={'Facebook'}>
                   <FaFacebookF />
                 </SocialButton>

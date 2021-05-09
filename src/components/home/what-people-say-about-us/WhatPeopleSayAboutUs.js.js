@@ -46,7 +46,7 @@ export default function WhatPeopleSayAboutUs() {
                   <Text color={'gray.800'} fontSize="lg" fontWeight="500">
                     {item.name}
                   </Text>
-                  <Text fontSize={'sm'} color={'gray.400'}>
+                  <Text fontSize={'sm'} color={'gray.600'}>
                     {item.position}
                   </Text>
                 </Box>
