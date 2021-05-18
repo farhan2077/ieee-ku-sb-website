@@ -1,20 +1,106 @@
-import React, { useEffect } from 'react';
-import { Link as RouteLink } from 'react-router-dom';
-import { Stack, Box, Text, Badge, Flex, Link, Center } from '@chakra-ui/layout';
-import { TimeIcon, ArrowForwardIcon } from '@chakra-ui/icons';
+import React, { useEffect, useState } from 'react';
+import { Link as RouteLink, useHistory } from 'react-router-dom';
+import { Stack, Box, Text, Badge, Flex, Link } from '@chakra-ui/layout';
+import {
+  TimeIcon,
+  ArrowForwardIcon,
+  ChevronRightIcon,
+  ChevronLeftIcon,
+} from '@chakra-ui/icons';
 import { Icon } from '@chakra-ui/react';
 import { BiMap } from 'react-icons/bi';
+import qs from 'query-string';
+import {
+  Paginator,
+  Container,
+  Previous,
+  Next,
+  PageGroup,
+} from 'chakra-paginator';
 
 import MetaDecorator from 'components/meta/MetaDecorator';
 import PageContainer from 'components/layout/PageContainer';
 import LayoutContainer from 'components/layout/LayoutContainer';
 import SectionHeader from 'components/styled-components/SectionHeader';
-import { EVENTS } from 'data/events/EVENTS';
+import { agent } from 'helpers/agent';
 
 export default function Events() {
+  const history = useHistory();
+  const query = qs.parse(window.location.search);
+
+  console.log(query.page);
+
+  const [eventsData, setEventsData] = useState([]);
+  const [totalEventsInfo, setTotalEventsInfo] = useState('');
+  const [currentPage, setCurrentPage] = useState(parseInt(query.page) || 1);
+  const perPage = parseInt(query.pageSize) || 5;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    const fetchEvents = () => {
+      const queryString = qs.stringify({
+        page: currentPage,
+        perPage,
+      });
+
+      agent
+        .getEvents(queryString)
+        .then(res => res.json())
+        .then(({ data }) => {
+          setTotalEventsInfo(data);
+          setEventsData(data.events);
+        });
+    };
+
+    fetchEvents();
+  }, [currentPage, perPage]);
+
+  // constants
+  const outerLimit = 2;
+  const innerLimit = 2;
+
+  const baseStyles = {
+    w: 8,
+    h: 8,
+    fontSize: 'sm',
+  };
+
+  const normalStyles = {
+    ...baseStyles,
+    _hover: {
+      bg: 'blue.200',
+    },
+    bg: 'gray.100',
+  };
+
+  const activeStyles = {
+    ...baseStyles,
+    _hover: {
+      bg: 'blue.200',
+    },
+    bg: 'blue.100',
+  };
+
+  const separatorStyles = {
+    w: 8,
+    h: 8,
+    bg: 'white',
+  };
+
+  const handlePageChange = nextPage => {
+    // -> request new data using the page number
+    setCurrentPage(nextPage);
+    console.log('request new data with ->', nextPage);
+
+    setCurrentPage(nextPage);
+
+    history.push({
+      search: `?page=${nextPage}`,
+    });
+  };
 
   return (
     <div>
@@ -24,7 +110,7 @@ export default function Events() {
           <Box m={{ base: 5, md: 6 }}></Box>
           <SectionHeader sectionHeaderText="all events" />
           <Box m={{ base: 5, md: 8 }}></Box>
-          {EVENTS.map(event => {
+          {eventsData.map(event => {
             return (
               <Stack
                 direction={{ base: 'column', sm: 'column', md: 'row' }}
@@ -103,7 +189,32 @@ export default function Events() {
             );
           })}
           <Box mt={{ base: -2, md: -6 }} mb={4}>
-            <Center color={'gray.500'}>Whew, you have reached the end!</Center>
+            <Paginator
+              normalStyles={normalStyles}
+              activeStyles={activeStyles}
+              separatorStyles={separatorStyles}
+              innerLimit={innerLimit}
+              outerLimit={outerLimit}
+              currentPage={currentPage}
+              pagesQuantity={totalEventsInfo.maxPages}
+              onPageChange={handlePageChange}
+            >
+              <Container align="center" justify="space-between" w="full" py={4}>
+                <Box display={{ base: 'none', md: 'block' }}>
+                  <Previous>
+                    <Icon as={ChevronLeftIcon} h={5} w={5} />
+                    Previous
+                  </Previous>
+                </Box>
+                <PageGroup isInline align="center" />
+                <Box display={{ base: 'none', md: 'block' }}>
+                  <Next>
+                    Next
+                    <Icon as={ChevronRightIcon} h={5} w={5} />
+                  </Next>
+                </Box>
+              </Container>
+            </Paginator>
           </Box>
         </LayoutContainer>
       </PageContainer>

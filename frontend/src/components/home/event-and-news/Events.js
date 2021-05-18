@@ -18,7 +18,11 @@ export default function Event() {
         <Spacer />
         <Link
           as={RouteLink}
-          to="/events"
+          to={{
+            pathname: '/events',
+            search: '?page=1',
+            state: { fromDashboard: true },
+          }}
           color="gray.600"
           _hover={{
             color: 'gray.800',
